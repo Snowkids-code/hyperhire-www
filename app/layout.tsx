@@ -2,6 +2,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import Head from "next/head";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -22,8 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.className}>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="/node_modules/react-responsive-carousel/lib/styles/carousel.min.css"
+        />
+      </Head>
       <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
