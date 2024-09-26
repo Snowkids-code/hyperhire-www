@@ -2,8 +2,8 @@ import Image from 'next/image';
 import React from 'react';
 
 interface CardProps {
-  sliderIcon: string; // Expecting the icon URL
-  sliderText: string; // Expecting the text for the card
+  sliderIcon: string;
+  sliderText: string; 
 }
 
 const Card: React.FC<CardProps> = ({ sliderIcon, sliderText }) => {

@@ -1,8 +1,27 @@
+"use client";
+
+import { FooterType } from "@/types";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../Footer/Card";
 
 export default function Footer() {
+  const [data, setData] = useState<FooterType[]>([]);
+
+  useEffect(() => {
+    async function fetchSliderContent() {
+      const response = await fetch("/api/footer", {
+        method: "GET",
+      });
+
+      const res = await response.json();
+
+      setData(res.data as FooterType[]);
+    }
+
+    fetchSliderContent();
+  }, []);
+
   return (
     <div className="primary-container bg-[#FBFBFB]">
       <div style={{ gridArea: "main" }}>
@@ -26,10 +45,14 @@ export default function Footer() {
               </p>
             </div>
             <div className="grid grid-cols-2 grid-rows-2 mt-6 gap-3 laptop:grid-cols-4 grid-rows-1">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              {data.map((value) => (
+                <Card
+                  key={value.footerId}
+                  icon={value.footerIcon}
+                  heading={value.footerHeading}
+                  description={value.footerDescription}
+                />
+              ))}
             </div>
           </div>
           <div className="laptop:grid grid-cols-[1fr_2fr]">

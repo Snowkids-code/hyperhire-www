@@ -9,7 +9,7 @@ import SwiperCard from "../Slider/SwiperCard";
 export default function Swiper() {
   return (
     <div>
-      <Carousel autoPlay interval={3000} infiniteLoop transitionTime={1000}>
+      <Carousel showThumbs={false} autoPlay interval={3000} infiniteLoop transitionTime={1000}>
         <SwiperCard />
         <SwiperCard />
         <SwiperCard />
