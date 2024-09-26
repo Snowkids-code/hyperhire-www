@@ -1,14 +1,30 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../Slider/Card";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import type { SliderType } from "@/types";
 
 export default function Slider() {
+  const [data, setData] = useState<SliderType[]>([]);
+
+  useEffect(() => {
+    async function fetchSliderContent() {
+      const response = await fetch("/api/slider", {
+        method: "GET",
+      });
+
+      const res = await response.json();
+
+      setData(res.data as SliderType[]);
+    }
+
+    fetchSliderContent();
+  }, []);
+
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -25,6 +41,8 @@ export default function Slider() {
       items: 1,
     },
   };
+
+  
 
   return (
     <div className="secondary-container bg-[#81C3CF] ">
@@ -47,11 +65,13 @@ export default function Slider() {
             itemClass="carousel-item-padding-40-px"
             className="grid grid-cols-5 gap-6"
           >
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {data.map((value) => (
+              <Card
+                key={value.sliderId}
+                sliderIcon={value.sliderIcon}
+                sliderText={value.sliderText}
+              />
+            ))}
           </Carousel>
         </div>
       </div>
