@@ -1,38 +1,37 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import type { SliderType } from "@/types";
+import type { FooterType } from "@/types";
 import { NextResponse } from "next/server";
 
-const sliders: SliderType[] = [
+const footerData: FooterType[] = [
   {
-    sliderId: "1",
-    sliderIcon: "/icons/support.svg",
-    sliderText: "해외 마케팅",
+    footerId: "1",
+    footerIcon: "/icons/code.svg",
+    footerHeading: "해외 개발자 원격 채용",
+    footerDescription: "바로가기"
   },
   {
-    sliderId: "2",
-    sliderIcon: "/icons/media.svg",
-    sliderText: "퍼블리셔",
+    footerId: "2",
+    footerIcon: "/icons/code.svg",
+    footerHeading: "외국인 원격 채용 (비개발)",
+    footerDescription: "바로가기"
   },
   {
-    sliderId: "3",
-    sliderIcon: "/icons/container.svg",
-    sliderText: "캐드원(제도사)",
+    footerId: "3",
+    footerIcon: "/icons/KOR.svg",
+    footerHeading: "한국어 가능 외국인 채용",
+    footerDescription: "바로가기"
   },
   {
-    sliderId: "4",
-    sliderIcon: "/icons/compass.svg",
-    sliderText: "퍼블리셔",
-  },
-  {
-    sliderId: "5",
-    sliderIcon: "/icons/call.svg",
-    sliderText: "캐드원(제도사)",
+    footerId: "4",
+    footerIcon: "/icons/settings.svg",
+    footerHeading: "해외 개발자 활용 서비스",
+    footerDescription: "바로가기"
   },
 ];
 
 export function GET() {
   return NextResponse.json(
-    { message: "Success", data: sliders },
+    { message: "Success", data: footerData },
     { status: 200 }
   );
 }
