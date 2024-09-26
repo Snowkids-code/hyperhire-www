@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Checkbox from "./Checkbox";
 import Features from "./Features";
-import Slider from "./Slider";
+import Carousel from "./Carousel";
 
 export default function Landing() {
   return (
@@ -46,7 +46,7 @@ export default function Landing() {
               </div>
             </div>
             <div className="mt-8">
-              <Slider />
+              <Carousel />
             </div>
           </div>
           <div className="grid grid-cols-2 grid-rows-2 mt-8 gap-4 laptop:hidden">
