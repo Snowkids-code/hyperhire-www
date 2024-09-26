@@ -53,7 +53,7 @@ body {
 .secondary-container {
   display: grid;
   grid-template-columns: 1fr 1120px 1fr;
-  grid-template-areas: ". main .";
+  grid-template-areas: ". main main";
 
   @media only screen and (max-width: 1700px) {
     grid-template-columns: 15% 70% 15%;
