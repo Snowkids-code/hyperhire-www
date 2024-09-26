@@ -30,6 +30,7 @@ export default function Swiper() {
         interval={3000}
         infiniteLoop
         transitionTime={1000}
+        className="max-w-full"
       >
         {data.map((value) => (
           <SwiperCard
@@ -39,8 +40,6 @@ export default function Swiper() {
             heading={value.swiperHeading}
           />
         ))}
-        {/* <SwiperCard />
-        <SwiperCard /> */}
       </Carousel>
     </div>
   );

@@ -9,7 +9,7 @@ interface SwiperCardProps {
 
 const SwiperCard: React.FC<SwiperCardProps> = ({ image, name, heading }) => {
   return (
-    <div className="">
+    <div className="max-w-full">
       <div className="bg-[#fff] py-12 flex flex-col justify-center items-center rounded-[12px]">
         <div className="flex justify-center">
           <Image
