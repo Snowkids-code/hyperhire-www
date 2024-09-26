@@ -1,7 +1,7 @@
 // "use client"
 
 import Landing from "@/components/Homepage/Landing";
-// import Slider from "@/components/Homepage/Slider";
+import Slider from "@/components/Homepage/Slider";
 import Footer from "@/components/Layout/Footer";
 import Navbar from "@/components/Layout/Navbar";
 // import type { SliderType } from "@/types";
@@ -37,7 +37,7 @@ export default function Home() {
     <div className="">
       <Navbar />
       <Landing />
-      {/* <Slider /> */}
+      <Slider />
       <Footer />
     </div>
   );
