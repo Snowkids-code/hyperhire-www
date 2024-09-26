@@ -47,3 +47,25 @@ body {
     grid-template-columns: 2.5% 95% 2.5%;
   }
 }
+
+.secondary-container {
+  display: grid;
+  grid-template-columns: 1fr 1120px 1fr;
+  grid-template-areas: ". main main";
+
+  @media only screen and (max-width: 1700px) {
+    grid-template-columns: 15% 70% 15%;
+  }
+
+  @media only screen and (max-width: 1500px) {
+    grid-template-columns: 10% 80% 10%;
+  }
+
+  @media only screen and (max-width: 1300px) {
+    grid-template-columns: 5% 90% 5%;
+  }
+
+  @media only screen and (max-width: 700px) {
+    grid-template-columns: 2.5% 95% 2.5%;
+  }
+}
