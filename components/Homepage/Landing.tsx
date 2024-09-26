@@ -2,13 +2,13 @@ import Image from "next/image";
 import React from "react";
 import Checkbox from "./Checkbox";
 import Features from "./Features";
-import Carousel from "./Carousel";
+import Swiper from "./Swiper";
 
 export default function Landing() {
   return (
     <div className="primary-container bg-[#81C3CF]">
       <div style={{ gridArea: "main" }}>
-        <div className="p-4 py-16 laptop:grid grid-cols-[2fr_1.5fr] gap-4">
+        <div className="p-4 py-16 laptop:grid grid-cols-[3fr_1.5fr] gap-4">
           <div>
             <div className="bg-[#8BC4FF] w-fit p-4 rounded-[8px]">
               <p className="text-white font-[900] text-[18px]">
@@ -46,7 +46,7 @@ export default function Landing() {
               </div>
             </div>
             <div className="mt-8">
-              <Carousel />
+              <Swiper />
             </div>
           </div>
           <div className="grid grid-cols-2 grid-rows-2 mt-8 gap-4 laptop:hidden">

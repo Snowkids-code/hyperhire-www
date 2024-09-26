@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
 
-export default function Carousel() {
+export default function SwiperCard() {
   return (
     <div className="">
-      <div className="bg-[#fff] p-4 py-12 flex flex-col justify-center items-center rounded-[12px]">
+      <div className="bg-[#fff] py-12 flex flex-col justify-center items-center rounded-[12px]">
         <div className="flex justify-center">
           <Image
             alt="picture"
