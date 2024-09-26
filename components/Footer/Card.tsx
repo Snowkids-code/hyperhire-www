@@ -26,6 +26,7 @@ const Card: React.FC<CardProps> = ({ icon, heading, description }) => {
           src="/icons/forward.svg"
           width="24"
           height="24"
+          className="cursor-pointer"
         />
       </div>
     </div>
