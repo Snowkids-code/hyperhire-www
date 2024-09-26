@@ -77,9 +77,9 @@ export default function Landing() {
                 </p>
               </div>
             </div>
-            <div className="mt-8 max-w-full">
+            {/* <div className="mt-8 max-w-full">
               <Swiper />
-            </div>
+            </div> */}
           </div>
           <div className="grid grid-cols-2 grid-rows-2 mt-8 gap-4 laptop:hidden">
             {checkboxData.map((value) => (
