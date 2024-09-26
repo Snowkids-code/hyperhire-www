@@ -1,18 +1,46 @@
 "use client";
 
-import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import SwiperCard from "../Slider/SwiperCard";
+import { SwiperType } from "@/types";
 
 export default function Swiper() {
+  const [data, setData] = useState<SwiperType[]>([]);
+
+  useEffect(() => {
+    async function fetchSliderContent() {
+      const response = await fetch("/api/swiper", {
+        method: "GET",
+      });
+
+      const res = await response.json();
+
+      setData(res.data as SwiperType[]);
+    }
+
+    fetchSliderContent();
+  }, []);
   return (
     <div>
-      <Carousel showThumbs={false} autoPlay interval={3000} infiniteLoop transitionTime={1000}>
-        <SwiperCard />
-        <SwiperCard />
-        <SwiperCard />
+      <Carousel
+        showThumbs={false}
+        autoPlay
+        interval={3000}
+        infiniteLoop
+        transitionTime={1000}
+      >
+        {data.map((value) => (
+          <SwiperCard
+            key={value.swiperId}
+            image={value.swiperImage}
+            name={value.swiperName}
+            heading={value.swiperHeading}
+          />
+        ))}
+        {/* <SwiperCard />
+        <SwiperCard /> */}
       </Carousel>
     </div>
   );

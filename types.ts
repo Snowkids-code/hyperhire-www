@@ -10,3 +10,10 @@ export type FooterType = {
   footerHeading: string;
   footerDescription: string;
 };
+
+export type SwiperType = {
+  swiperId: string;
+  swiperImage: string;
+  swiperName: string;
+  swiperHeading: string;
+};
