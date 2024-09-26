@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Noto_Sans, Poppins } from "next/font/google";
-
-const notoSans = Noto_Sans({
-  weight: ["400", "500", "700"], // You can choose the weights you need
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-noto-sans",
-});
+import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

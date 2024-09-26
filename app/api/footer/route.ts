@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import type { FooterType } from "@/types";
 import { NextResponse } from "next/server";
 

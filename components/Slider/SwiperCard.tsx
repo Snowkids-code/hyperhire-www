@@ -14,7 +14,7 @@ const SwiperCard: React.FC<SwiperCardProps> = ({ image, name, heading }) => {
         <div className="flex justify-center">
           <Image
             alt="picture"
-            src="/images/profile.png"
+            src={image}
             width="96"
             height="156"
             objectFit="cover"

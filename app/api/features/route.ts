@@ -1,7 +1,7 @@
 import type { FeatureType } from "@/types";
 import { NextResponse } from "next/server";
 
-const swiperData: FeatureType[] = [
+const featuresData: FeatureType[] = [
   {
     featureId: "1",
     featureHeading: "평균 월 120만원",
@@ -21,7 +21,7 @@ const swiperData: FeatureType[] = [
 
 export function GET() {
   return NextResponse.json(
-    { message: "Success", data: swiperData },
+    { message: "Success", data: featuresData },
     { status: 200 }
   );
 }
