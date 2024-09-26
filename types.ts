@@ -17,3 +17,9 @@ export type SwiperType = {
   swiperName: string;
   swiperHeading: string;
 };
+
+export type FeatureType = {
+  featureId: string;
+  featureHeading: string;
+  featureDescription: string;
+};

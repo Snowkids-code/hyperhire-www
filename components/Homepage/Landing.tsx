@@ -1,10 +1,29 @@
+"use client";
+
+import { FeatureType } from "@/types";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Checkbox from "./Checkbox";
 import Features from "./Features";
 import Swiper from "./Swiper";
 
 export default function Landing() {
+  const [featureData, setFeatureData] = useState<FeatureType[]>([]);
+
+  useEffect(() => {
+    async function fetchFeaturesContent() {
+      const response = await fetch("/api/features", {
+        method: "GET",
+      });
+
+      const res = await response.json();
+
+      setFeatureData(res.data as FeatureType[]);
+    }
+
+    fetchFeaturesContent();
+  }, []);
+
   return (
     <div className="primary-container bg-[#81C3CF]">
       <div style={{ gridArea: "main" }}>
@@ -26,9 +45,13 @@ export default function Landing() {
               개발자가 필요하신가요?
             </p>
             <div className="hidden laptop:grid mt-16 grid-cols-3 gap-12">
-              <Features />
-              <Features />
-              <Features />
+              {featureData.map((value) => (
+                <Features
+                  key={value.featureHeading}
+                  heading={value.featureHeading}
+                  description={value.featureDescription}
+                />
+              ))}
             </div>
           </div>
           <div>
