@@ -13,7 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       screens: {
-        laptop: "1300px",
+        laptop: "1024px",
         desktop: "1280px",
       },
     },
