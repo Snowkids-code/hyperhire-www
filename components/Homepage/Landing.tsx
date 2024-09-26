@@ -77,7 +77,7 @@ export default function Landing() {
                 </p>
               </div>
             </div>
-            <div className="mt-8">
+            <div className="mt-8 max-w-full">
               <Swiper />
             </div>
           </div>
