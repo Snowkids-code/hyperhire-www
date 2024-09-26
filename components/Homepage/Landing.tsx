@@ -1,0 +1,51 @@
+import Image from "next/image";
+import React from "react";
+import Checkbox from "./Checkbox";
+import Slider from "./Slider";
+
+export default function Landing() {
+  return (
+    <div className="primary-container bg-[#81C3CF]">
+      <div style={{ gridArea: "main" }}>
+        <div className="p-4 py-16">
+          <div className="bg-[#8BC4FF] w-fit p-4 rounded-[8px]">
+            <p className="text-white font-[900] text-[18px]">
+              풀타임, 파트타임
+            </p>
+          </div>
+          <p className="text-white font-[900] text-[36px] mt-6 leading-[46.8px]">
+            최고의 실력을 가진 외국인 인재를 찾고 계신가요?
+          </p>
+          <p className="text-white font-[900] text-[18px] mt-6 leading-[27px]">
+            법률 및 인사관리 부담없이 1주일 이내에 원격으로 채용해보세요.
+          </p>
+          <div className="flex justify-center items-center mt-8">
+            <div className="rounded-[8px] w-fit flex gap-4 items-center bg-[#E9F7EF] py-4 px-8">
+              <Image
+                alt="dollar-icon"
+                src="/icons/dollar.svg"
+                width="32"
+                height="32"
+              />
+              <p className="text-[#00C696] font-[900] text-[18px] leading-[27px]">
+                월 100만원
+              </p>
+            </div>
+          </div>
+          <div className="mt-8">
+            <Slider />
+          </div>
+          <div className="grid grid-cols-2 grid-rows-2 mt-8 gap-4">
+            <Checkbox />
+            <Checkbox />
+            <Checkbox />
+            <Checkbox />
+          </div>
+          <p className="text-[#FBFF23] font-[900] text-[18px] leading-[27px] mt-6 underline underline-offset-4">
+            개발자가 필요하신가요?
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}

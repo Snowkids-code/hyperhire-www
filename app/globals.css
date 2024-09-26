@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,5 +23,27 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+} */
+
+.primary-container {
+  display: grid;
+  grid-template-columns: 1fr 1120px 1fr;
+  grid-template-areas: ". main .";
+
+  @media only screen and (max-width: 1700px) {
+    grid-template-columns: 15% 70% 15%;
+  }
+
+  @media only screen and (max-width: 1500px) {
+    grid-template-columns: 10% 80% 10%;
+  }
+
+  @media only screen and (max-width: 1300px) {
+    grid-template-columns: 5% 90% 5%;
+  }
+
+  @media only screen and (max-width: 700px) {
+    grid-template-columns: 2.5% 95% 2.5%;
   }
 }
