@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Checkbox from "./Checkbox";
 import Features from "./Features";
-// import Swiper from "./Swiper";
+import Swiper from "./Swiper";
 
 export default function Landing() {
   const [featureData, setFeatureData] = useState<FeatureType[]>([]);
@@ -77,9 +77,9 @@ export default function Landing() {
                 </p>
               </div>
             </div>
-            {/* <div className="mt-8 max-w-full">
+            <div className="mt-8 max-w-full">
               <Swiper />
-            </div> */}
+            </div>
           </div>
           <div className="grid grid-cols-2 grid-rows-2 mt-8 gap-4 laptop:hidden">
             {checkboxData.map((value) => (
