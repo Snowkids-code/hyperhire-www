@@ -1,6 +1,6 @@
 "use client";
 
-import { FeatureType } from "@/types";
+import { CheckboxType, FeatureType } from "@/types";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Checkbox from "./Checkbox";
@@ -9,6 +9,7 @@ import Swiper from "./Swiper";
 
 export default function Landing() {
   const [featureData, setFeatureData] = useState<FeatureType[]>([]);
+  const [checkboxData, setCheckboxData] = useState<CheckboxType[]>([]);
 
   useEffect(() => {
     async function fetchFeaturesContent() {
@@ -19,6 +20,14 @@ export default function Landing() {
       const res = await response.json();
 
       setFeatureData(res.data as FeatureType[]);
+
+      const checkboxResponse = await fetch("/api/checkbox", {
+        method: "GET",
+      });
+
+      const checkboxRes = await checkboxResponse.json();
+
+      setCheckboxData(checkboxRes.data as CheckboxType[]);
     }
 
     fetchFeaturesContent();
@@ -73,10 +82,16 @@ export default function Landing() {
             </div>
           </div>
           <div className="grid grid-cols-2 grid-rows-2 mt-8 gap-4 laptop:hidden">
+            {checkboxData.map((value) => (
+              <Checkbox
+                key={value.checkboxId}
+                content={value.checkboxContent}
+              />
+            ))}
+            {/* <Checkbox />
             <Checkbox />
             <Checkbox />
-            <Checkbox />
-            <Checkbox />
+            <Checkbox /> */}
           </div>
           <p className="text-[#FBFF23] font-[900] text-[18px] leading-[27px] mt-6 underline underline-offset-4 laptop:hidden">
             개발자가 필요하신가요?

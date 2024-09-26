@@ -23,3 +23,8 @@ export type FeatureType = {
   featureHeading: string;
   featureDescription: string;
 };
+
+export type CheckboxType = {
+  checkboxId: string;
+  checkboxContent: string;
+};
