@@ -1,3 +1,4 @@
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Poppins } from "next/font/google";
