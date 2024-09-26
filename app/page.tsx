@@ -37,7 +37,7 @@ export default function Home() {
     <div className="">
       <Navbar />
       <Landing />
-      <Slider />
+      {/* <Slider /> */}
       <Footer />
     </div>
   );

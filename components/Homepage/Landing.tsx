@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Checkbox from "./Checkbox";
 import Features from "./Features";
-import Swiper from "./Swiper";
+// import Swiper from "./Swiper";
 
 export default function Landing() {
   const [featureData, setFeatureData] = useState<FeatureType[]>([]);
